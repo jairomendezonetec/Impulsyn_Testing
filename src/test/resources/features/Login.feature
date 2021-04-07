@@ -1,0 +1,51 @@
+Feature: Casos de prueba de LOG IN
+
+  @login @login_001 @complete
+  Scenario: LOGIN_001 - Validación de errores en LOGIN
+    Given El usuario accede a Log In
+    When El usuario valida Log in con errores
+      | Email    |  |
+      | Password |  |
+    Then El usuario valida error en los siguientes campos:
+      | Email    | error |
+      | Password | error |
+    When El usuario valida Log in con errores
+      | Email    | emailErroneo |
+      | Password | 123456       |
+    Then El usuario valida error en los siguientes campos:
+      | Email    | error |
+      | Password |       |
+    When El usuario valida Log in con errores
+      | Email    | emailErroneo@error.com |
+      | Password | 123456                 |
+    Then El usuario valida error en los siguientes campos:
+      | Email    |       |
+      | Password | error |
+
+  @login @login_002 @complete
+  Scenario: LOGIN_002 - Validación de LOGOUT
+    Given El usuario hace Log In
+      | Email    | jairo.mendez@grupoonetec.com |
+      | Password | Acceso01                     |
+    Then El usuario hace Log out
+
+  @login @login_003 @complete
+  Scenario: LOGIN_003 - Validación de Recordar password
+    Given El usuario hace Log In
+      | Email    | jairo.mendez@grupoonetec.com |
+      | Password | Acceso01                     |
+    And El usuario accede a la home
+    When El usuario cierra e inicia la app
+    Then El usuario accede a la home
+    Then El usuario hace Log out
+
+  @login @login_004 @complete
+  Scenario: LOGIN_004 - Validación de NO recordar password
+    Given El usuario hace Log In
+      | Email       | jairo.mendez@grupoonetec.com |
+      | Password    | Acceso01                     |
+      | Remember me | false                        |
+    And El usuario accede a la home
+    When El usuario cierra e inicia la app
+    Then El usuario valida que no recuerda el usuario
+
