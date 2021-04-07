@@ -31,15 +31,15 @@ public class Hooks extends DriverManager {
 		logger.info("----------------------------------------------------------------------");
 		framework.Configuration.loadConfiguration("testResources/framework.properties");
 		startDriver();
-		
+		DriverManager.getAndroidDriver().resetApp();
 	}
 
 	@After
-	public void embedScreenshot(Scenario scenario) {
+	public void embedScreenshot(Scenario scenario)  throws Exception {
 		if (scenario.isFailed()) {
 			try {
 				logger.debug("Taking screenshot due to the test has failed...");
-				byte[] screenshot = ((TakesScreenshot) androidDriver).getScreenshotAs(OutputType.BYTES);
+				byte[] screenshot = ((TakesScreenshot) DriverManager.getAndroidDriver()).getScreenshotAs(OutputType.BYTES);
 				scenario.embed(screenshot, "image/png");
 			} catch (WebDriverException wde) {
 				System.err.println(wde.getMessage());
@@ -50,5 +50,6 @@ public class Hooks extends DriverManager {
 		logger.info("----------------------------------------------------------------------");
 		logger.info(" Finish Scenario: " + scenario.getName());
 		logger.info("----------------------------------------------------------------------");
+		quitAppium();
 	}
 }

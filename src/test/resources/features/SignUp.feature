@@ -1,6 +1,6 @@
 Feature: Casos de prueba de SIGN UP
 
-  @signup @signUp_001
+  @signup @signUp_001 @complete
   Scenario: SIGNUP_001 - Validación de errores en SIGNUP
     Given El usuario accede a SignUp
     When El usuario valida Sign up con errores
@@ -27,8 +27,4 @@ Feature: Casos de prueba de SIGN UP
       | Name and surname |       |
       | Email            |       |
       | Password         | error |
-    Given El usuario valida Sign up
-      | Name and surname | Test                   |
-      | Email            | emailErroneo@error.com |
-      | Password         | Password1              |
       

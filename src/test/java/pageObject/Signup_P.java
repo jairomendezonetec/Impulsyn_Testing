@@ -11,32 +11,18 @@ import framework.AppiumKeyword;
 import framework.DriverManager;
 import io.cucumber.datatable.DataTable;
 
-public class Signup_P {
+public class Signup_P extends General_P{
 
-	// Elementos pantalla de cuentas
-	public static String[] SIGNUP = { "xpath", "//app-signup//ion-button[text()='Sign up']" };
-	public static String[] VERYFYBUTTON = { "xpath", "//app-signup//ion-button[text()='Verify']" };
-
-	public static String[] input(String value) {
-		String[] object = { "xpath", "//*[text()='$$']/../..//input" };
+	public static String[] button(String value) {
+		String[] object = { "xpath", "//app-signup//ion-button[text()='$$']" };
 		object[1] = object[1].replace("$$", value);
 		return object;
 	};
-
-	public static String[] errorField(String value) {
-		String[] object = { "xpath", "//*[text()='$$']/../..//*[@class='form-error-message']" };
-		object[1] = object[1].replace("$$", value);
-		return object;
-	};
-
-	public static void isAt() throws Exception {
-//		Keywords.exists(TITULO_DETALLE_CUENTA, 10);
-	}
 
 	public static void signUp(DataTable table, boolean errors) throws Exception {
 		List<List<String>> data = table.asLists();
 
-		AppiumKeyword.waitToBePresent(SIGNUP, 10);
+		AppiumKeyword.waitToBePresent(button("Sign up"), 10);
 
 		System.out.println(data);
 		for (int i = 0; i < data.size(); i++) {
@@ -47,25 +33,11 @@ public class Signup_P {
 		}
 
 		AppiumKeyword.closeKeyboard();
-		AppiumKeyword.pushOn(SIGNUP);
+		AppiumKeyword.pushOn(button("Sign up"));
 
 		if (!errors) {
-			AppiumKeyword.waitToVanish(SIGNUP, 10);
-			AppiumKeyword.waitToBePresent(VERYFYBUTTON, 10);
-		}
-	}
-
-	public static void validarErroresSignUp(DataTable table) throws Exception {
-		List<List<String>> data = table.asLists();
-
-		for (int i = 0; i < data.size(); i++) {
-			String field = data.get(i).get(0);
-			String value =data.get(i).get(1);
-			System.out.println(value);
-			if(value.contains("error"))
-				AppiumKeyword.verify(errorField(field), 10);
-			else
-				AppiumKeyword.isNotPresent(errorField(field));
+			AppiumKeyword.waitToVanish(button("Sign up"), 10);
+			AppiumKeyword.waitToBePresent(button("Verify"), 10);
 		}
 	}
 

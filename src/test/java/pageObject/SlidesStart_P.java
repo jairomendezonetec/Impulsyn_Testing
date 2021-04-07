@@ -9,22 +9,26 @@ import org.openqa.selenium.WebElement;
 
 import framework.AppiumKeyword;
 import framework.DriverManager;
+import framework.ManageBrowser;
 import io.cucumber.datatable.DataTable;
 
 public class SlidesStart_P {
 
-	// Elementos pantalla de cuentas
-	public static String[] SIGNUP = {"xpath", "//ion-slide//ion-button[text()='Sign up']"};
-	
+	public static String[] button(String value) {
+		String[] object = { "xpath", "//ion-slide//*[text()='$$']" };
+		object[1] = object[1].replace("$$", value);
+		return object;
+	};
 
 	public static void isAt() throws Exception {
-		AppiumKeyword.exists(SIGNUP, 10);
+		AppiumKeyword.exists(button("Sign up"), 10);
 	}
 
-	public static void Signup() throws Exception {
+	public static void accessTo(String buttonText) throws Exception {
+		System.out.println(DriverManager.getAndroidDriver().getContextHandles());
 		 AppiumKeyword.changeContext("WEBVIEW_io.ionic.starter");
-		 AppiumKeyword.waitToBeClickable(SIGNUP, 20);
-		 AppiumKeyword.pushOn(SIGNUP);
+		 AppiumKeyword.waitToBeClickable(button(buttonText), 20);
+		 AppiumKeyword.pushOn(button(buttonText));
 	}
 	
 }

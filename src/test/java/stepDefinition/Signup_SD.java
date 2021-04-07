@@ -12,12 +12,12 @@ public class Signup_SD {
 	}
 	@When("^El usuario valida Sign up$")
 	public void validarSignUp(DataTable table) throws Throwable {
-		Signup_P.signUp(table, true);
+		Signup_P.signUp(table, false);
 	}
 	
 	@When("^El usuario valida error en los siguientes campos:$")
 	public void validarErroresSignUp(DataTable table) throws Throwable {
-		Signup_P.validarErroresSignUp(table);
+		Signup_P.validarErroresCampos(table);
 	}
 	
 }
