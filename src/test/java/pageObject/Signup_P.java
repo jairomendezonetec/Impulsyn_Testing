@@ -20,6 +20,7 @@ public class Signup_P extends General_P{
 	};
 
 	public static void signUp(DataTable table, boolean errors) throws Exception {
+		
 		List<List<String>> data = table.asLists();
 
 		AppiumKeyword.waitToBePresent(button("Sign up"), 10);
