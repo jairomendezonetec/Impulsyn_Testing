@@ -36,15 +36,15 @@ public class Hooks extends DriverManager {
 
 	@After
 	public void embedScreenshot(Scenario scenario)  throws Exception {
-		try {
+//		try {
 			logger.debug("Taking final screenshot...");
 			byte[] screenshot = ((TakesScreenshot) DriverManager.getAndroidDriver()).getScreenshotAs(OutputType.BYTES);
 			scenario.embed(screenshot, "image/png");
-		} catch (WebDriverException wde) {
-			System.err.println(wde.getMessage());
-		} catch (ClassCastException cce) {
-			cce.printStackTrace();
-		}
+//		} catch (WebDriverException wde) {
+//			System.err.println(wde.getMessage());
+//		} catch (ClassCastException cce) {
+//			cce.printStackTrace();
+//		}
 		logger.info("----------------------------------------------------------------------");
 		logger.info(" Finish Scenario: " + scenario.getName());
 		logger.info("----------------------------------------------------------------------");
