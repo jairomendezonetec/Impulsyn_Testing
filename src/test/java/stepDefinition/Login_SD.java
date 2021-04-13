@@ -1,8 +1,13 @@
 package stepDefinition;
 
 import cucumber.api.java.en.When;
+import framework.Keywords;
 import io.cucumber.datatable.DataTable;
-import pageObject.*;
+import pageObject.Home_P;
+import pageObject.Login_Page;
+import pageObject.Menu_P;
+import pageObject.Settings_P;
+import pageObject.SlidesStart_P;
 
 
 public class Login_SD {
@@ -37,6 +42,11 @@ public class Login_SD {
 	@When("^El usuario valida que no recuerda el usuario$")
 	public void nORecuerdaUsuario() throws Throwable {
 		Login_Page.noRecuerdaUsuario();
+	}
+	
+	@When("^El usuario pulsa sobre login sin rellenar los campos$")
+	public void loginSinRellenar() throws Throwable {
+		Keywords.pushOn(Login_Page.button("Log in"));
 	}
 	
 	
