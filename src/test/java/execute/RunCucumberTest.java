@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 				monochrome = true,
 				features = {"classpath:features"},
 				tags = {"@login_002"},
-				plugin = {"pretty", "json:target/cucumber.json"})
+				plugin = {"pretty", "html:target/cucumber-report-html", "json:target/cucumber.json"})
 public class RunCucumberTest {
 
 }
