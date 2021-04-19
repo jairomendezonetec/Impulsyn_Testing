@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import framework.Configuration;
+import framework.Configuration.Global;
 import framework.DriverManager;
 import framework.ManageBrowser;
 import io.appium.java_client.MobileElement;
@@ -31,7 +33,7 @@ public class Hooks extends DriverManager {
 		logger.info("----------------------------------------------------------------------");
 		framework.Configuration.loadConfiguration("testResources/framework.properties");
 		startDriver();
-		DriverManager.getAndroidDriver().resetApp();
+		
 	}
 
 	@After
@@ -46,7 +48,7 @@ public class Hooks extends DriverManager {
 //			cce.printStackTrace();
 //		}
 		logger.info("----------------------------------------------------------------------");
-		logger.info(" Finish Scenario: " + scenario.getName());
+		logger.info(scenario.getStatus() + " Finish Scenario: " + scenario.getName());
 		logger.info("----------------------------------------------------------------------");
 		quitAppium();
 	}
