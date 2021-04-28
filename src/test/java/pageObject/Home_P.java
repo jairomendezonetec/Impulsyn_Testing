@@ -73,6 +73,7 @@ public class Home_P extends General_P {
 
         if (access) {
         	AppiumKeyword.waitToBeClickable(selector, 10);
+        	AppiumKeyword.pushOn(selector);
         }
     }
 
