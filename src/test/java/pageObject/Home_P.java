@@ -72,6 +72,8 @@ public class Home_P extends General_P {
         }
 
         if (access) {
+        	//ELIMINAR DESPUES DE ARREGLARLO CON EL SPINNER
+        	AppiumKeyword.waitSec(2);
         	AppiumKeyword.waitToBeClickable(selector, 10);
         	AppiumKeyword.pushOn(selector);
         }
