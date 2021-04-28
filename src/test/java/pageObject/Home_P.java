@@ -63,6 +63,8 @@ public class Home_P extends General_P {
                     selector = ariaLabel("mail outline");
                     break;
                 case "Menu":
+                	//ELIMINAR DESPUES DE ARREGLARLO CON EL SPINNER
+                	AppiumKeyword.waitSec(2);
                     selector = ariaLabel("menu outline");
                     break;
                 default:
@@ -72,8 +74,6 @@ public class Home_P extends General_P {
         }
 
         if (access) {
-        	//ELIMINAR DESPUES DE ARREGLARLO CON EL SPINNER
-        	AppiumKeyword.waitSec(2);
         	AppiumKeyword.waitToBeClickable(selector, 10);
         	AppiumKeyword.pushOn(selector);
         }
