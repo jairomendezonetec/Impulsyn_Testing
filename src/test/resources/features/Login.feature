@@ -26,14 +26,14 @@ Feature: Casos de prueba de LOG IN
   Scenario: LOGIN_002 - Validación de LOGOUT
     Given El usuario hace Log In
       | Email    | jairo.mendez@grupoonetec.com |
-      | Password | -Acceso01                     |
+      | Password | -Acceso01                    |
     Then El usuario hace Log out
 
   @login @login_003 @complete
   Scenario: LOGIN_003 - Validación de Recordar password
     Given El usuario hace Log In
       | Email       | jairo.mendez@grupoonetec.com |
-      | Password    | -Acceso01                     |
+      | Password    | -Acceso01                    |
       | Remember me | true                         |
     And El usuario accede a la home
     When El usuario hace Log out
@@ -44,11 +44,11 @@ Feature: Casos de prueba de LOG IN
   Scenario: LOGIN_004 - Validación de NO recordar password
     Given El usuario hace Log In
       | Email       | jairo.mendez@grupoonetec.com |
-      | Password    | -Acceso01                     |
+      | Password    | -Acceso01                    |
       | Remember me | false                        |
     And El usuario accede a la home
     When El usuario hace Log out
     Then El usuario pulsa sobre login sin rellenar los campos
     And El usuario valida Log in
       | Email    | jairo.mendez@grupoonetec.com |
-      | Password | -Acceso01                     |
+      | Password | -Acceso01                    |
