@@ -42,7 +42,7 @@ public class Home_P extends General_P {
     public static void verifyAndAccess(List<List<String>> data, boolean access) throws Exception {
         String[] selector = null;
 
-        AppiumKeyword.waitToBePresent(buttonTabText("Home"), 10);
+        AppiumKeyword.waitToBePresent(buttonTabText("Home"), 30);
 
         System.out.println(data);
         for (int i = 0; i < data.size(); i++) {
