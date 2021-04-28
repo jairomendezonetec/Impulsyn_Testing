@@ -46,7 +46,7 @@ public class Menu_P extends General_P {
 				case "Who viewed my profile":
 				case "Settings":
 				case "FAQs":
-				case "View your profile":
+				case "View profile":
 				case "Create page":
 					selector = buttonMenuText(key);
 					break;

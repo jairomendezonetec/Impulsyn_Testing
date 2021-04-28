@@ -4,7 +4,7 @@ Feature: Casos de prueba de HOME
   Scenario: HOME_001 - Validación de pantalla home
     Given El usuario hace Log In
       | Email    | jairo.mendez@grupoonetec.com |
-      | Password | Acceso01                     |
+      | Password | -Acceso01                     |
     Then El usuario tiene las siguientes acciones en la home:
       | Home          |
       | Networking    |
@@ -14,5 +14,3 @@ Feature: Casos de prueba de HOME
       #| Search        |
       #| Message       |
       | Menu          |
-
-  
