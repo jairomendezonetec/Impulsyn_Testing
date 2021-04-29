@@ -1,6 +1,6 @@
 Feature: Casos de prueba de LOG IN
 
-  @login @login_001 @complete
+  @login @login_001 @complete @regresion
   Scenario: LOGIN_001 - Validación de errores en LOGIN
     Given El usuario accede a Log In
     When El usuario valida Log in con errores
@@ -29,7 +29,7 @@ Feature: Casos de prueba de LOG IN
       | Password | -Acceso01                    |
     Then El usuario hace Log out
 
-  @login @login_003 @complete
+  @login @login_003 @complete @regresion
   Scenario: LOGIN_003 - Validación de Recordar password
     Given El usuario hace Log In
       | Email       | jairo.mendez@grupoonetec.com |

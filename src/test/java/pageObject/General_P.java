@@ -13,6 +13,7 @@ import io.cucumber.datatable.DataTable;
 
 public class General_P {
 
+	public static String[] spinner = { "xpath", "//app-spinner" };
 	public static String[] input(String value) {
 		String[] object = { "xpath", "//*[text()='$$']/../..//input" };
 		object[1] = object[1].replace("$$", value);

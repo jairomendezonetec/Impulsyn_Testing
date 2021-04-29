@@ -44,6 +44,8 @@ public class Login_Page extends General_P {
 
 		if (!errors) {
 			AppiumKeyword.waitToVanish(button("Log in"), 10);
+			AppiumKeyword.waitToBeClickable(spinner, 10);
+			AppiumKeyword.waitToVanish(spinner, 10);
 		}
 	}
 

@@ -1,6 +1,6 @@
 Feature: Casos de prueba de SIGN UP
 
-  @signup @signUp_001 @complete
+  @signup @signUp_001 @complete @regresion
   Scenario: SIGNUP_001 - Validación de errores en SIGNUP
     Given El usuario accede a SignUp
     When El usuario valida Sign up con errores

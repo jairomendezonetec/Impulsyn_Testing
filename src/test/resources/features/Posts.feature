@@ -1,6 +1,6 @@
 Feature: Casos de prueba de POSTS
 
-  @post_001 @post @complete
+  @post_001 @post @complete @regresion
   Scenario: POST_001 - Validación de creación de post (Texto)
     Given El usuario hace Log In
       | Email    | jairo.mendez@grupoonetec.com |
