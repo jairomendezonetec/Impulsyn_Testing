@@ -41,7 +41,13 @@ public class Menu_P extends General_P {
 		System.out.println(data);
 		for (int i = 0; i < data.size(); i++) {
 			String key = data.get(i).get(0);
-
+			String value = "";
+			
+			if(key.contains("Page:")) {
+				value = key.split(":")[1].trim();
+				key = "Page";
+			}
+			
 			switch (key) {
 				case "Who viewed my profile":
 				case "Settings":
@@ -49,6 +55,9 @@ public class Menu_P extends General_P {
 				case "View profile":
 				case "Create page":
 					selector = buttonMenuText(key);
+					break;
+				case "Page":
+					selector = buttonMenuText(value);
 					break;
 				default:
 					throw new Error(key +" is not valid option");

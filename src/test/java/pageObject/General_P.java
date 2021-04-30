@@ -31,6 +31,12 @@ public class General_P {
 		object[1] = object[1].replace("$$", value);
 		return object;
 	};
+
+	public static String[] ariaLabel(String page, String value) {
+		String[] object = { "xpath", "//%%//*[@aria-label='$$']/.." };
+		object[1] = object[1].replace("$$", value).replace("%%", page);
+		return object;
+	};
 	
 	public static String[] text(String value) {
 		String[] object = { "xpath", "//*[text()='$$']" };
