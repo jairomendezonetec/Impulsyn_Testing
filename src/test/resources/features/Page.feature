@@ -1,4 +1,4 @@
-Feature: Casos de prueba de POSTS
+Feature: Casos de prueba de Páginas
 
   @page_001 @page @complete @regresion
   Scenario: PAGE_001 - Validación de creación/borrado de página
