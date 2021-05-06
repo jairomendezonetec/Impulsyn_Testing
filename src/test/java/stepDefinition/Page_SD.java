@@ -17,5 +17,23 @@ public class Page_SD {
 		Page_P.eliminarPagina(page);
 	}
 	
+	@When("^El accede a \"(.*?)\" desde Page$")
+	public void acccessTo(String tab) throws Throwable {
+		Page_P.accessTo(tab);
+	}
+	
+	@When("^El usuario crea una opportunidad:$")
+	public void acccessTo(DataTable data) throws Throwable {
+		Page_P.createOpportunity(data);
+	}
+	
+	@When("^El usuario elimina la oportunidad \"(.*?)\"$")
+	public void deleteOpportunity(String opportunity) throws Throwable {
+		Page_P.deleteOpportunity(opportunity);
+	}
+	
+	
+	
+	
 
 }

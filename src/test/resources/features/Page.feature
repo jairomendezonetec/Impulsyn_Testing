@@ -15,4 +15,36 @@ Feature: Casos de prueba de Páginas
       | Website           | www.TagAutomationPage.com |
     When El usuario accede a "Menu" desde Home
     When El usuario accede a "Page: Test Automation Page" desde Menu
+    When El usuario crea un nuevo post
+      | Texto | Este post es generado por pruebas automáticas en la página |
+    When El usuario accede a "Post: Este post es generado por pruebas automáticas en la página" desde Profile
+    Then El usuario elimina el post
+    Then El usuario elimina la página "Test Automation Page"
+
+  @page_002 @page @complete @regresion
+  Scenario: PAGE_002 - Validación de creación/borrado de oportunidad
+    Given El usuario hace Log In
+      | Email    | jairo.mendez@grupoonetec.com |
+      | Password | -Acceso01                    |
+    When El usuario accede a "Menu" desde Home
+    And El usuario accede a "Create page" desde Menu
+    When El usuario crea una nueva página con los siguientes datos:
+      | Page type         | Sports Organization              |
+      | Organization type | Club                             |
+      | Name              | Test Automation Opportunity Page |
+      | Tagline           | Tag Automation Opportunity Page  |
+      | Website           | www.TagAutomationPage.com        |
+    When El usuario accede a "Menu" desde Home
+    When El usuario accede a "Page: Test Automation Opportunity Page" desde Menu
+    When El accede a "Opportunities" desde Page
+    When El usuario crea una opportunidad:
+      | Title                                         | QA Title                      |
+      | Description                                   | Description QA of opportunity |
+      | Area                                          | Sales                         |
+      | Opportunity type                              | Full-Time                     |
+      | Responsibilities                              | QA Responsabilities           |
+      | Requirements                                  | QA requirements               |
+      | Redirect the candidate to an external webpage | true                          |
+      | Website                                       | www.externalweb.com           |
+    When El usuario elimina la oportunidad "QA Title"
     Then El usuario elimina la página "Test Automation Page"

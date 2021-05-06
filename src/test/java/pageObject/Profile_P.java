@@ -51,7 +51,7 @@ public class Profile_P extends General_P {
 				selector = buttonMenuText(key);
 			default:
 				if (key.contains("Post: "))
-					selector = buttonMenuText(key.replace("Post: ", ""));
+					selector = text(key.replace("Post: ", ""));
 				else
 					throw new Error(key + " is not valid option");
 			}

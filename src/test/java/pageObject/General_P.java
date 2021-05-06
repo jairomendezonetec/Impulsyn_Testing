@@ -19,6 +19,12 @@ public class General_P {
 		object[1] = object[1].replace("$$", value);
 		return object;
 	};
+	
+	public static String[] textArea(String value) {
+		String[] object = { "xpath", "//*[text()='$$']/../..//textarea" };
+		object[1] = object[1].replace("$$", value);
+		return object;
+	};
 
 	public static String[] errorField(String value) {
 		String[] object = { "xpath", "//*[text()='$$']/../..//*[@class='form-error-message']" };

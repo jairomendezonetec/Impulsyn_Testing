@@ -35,7 +35,7 @@ public class Hooks extends DriverManager {
 		startDriver();
 		
 	}
-
+	
 	@After
 	public void embedScreenshot(Scenario scenario)  throws Exception {
 //		try {
