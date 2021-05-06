@@ -1,14 +1,8 @@
 package pageObject;
 
 import java.util.List;
-import java.util.Set;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 
 import framework.AppiumKeyword;
-import framework.DriverManager;
 import io.cucumber.datatable.DataTable;
 
 public class General_P {
