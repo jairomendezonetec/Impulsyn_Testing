@@ -21,7 +21,7 @@ Feature: Casos de prueba de Páginas
     Then El usuario elimina el post
     Then El usuario elimina la página "Test Automation Page"
 
-  @page_002 @page @complete @regresion
+  @page_002 @page @complete
   Scenario: PAGE_002 - Validación de creación/borrado de oportunidad
     Given El usuario hace Log In
       | Email    | jairo.mendez@grupoonetec.com |
