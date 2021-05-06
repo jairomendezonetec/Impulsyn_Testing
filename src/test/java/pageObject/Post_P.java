@@ -19,6 +19,7 @@ public class Post_P extends General_P {
 
 	public static void createPost(DataTable table) throws Exception {
 
+		AppiumKeyword.waitSec(1);
 		AppiumKeyword.pushOn(newPost);
 
 		List<List<String>> data = table.asLists();

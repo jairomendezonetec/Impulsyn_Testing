@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(glue = "stepDefinition", 
 				monochrome = true,
 				features = {"classpath:features"},
-				tags = {"@page_002"},
+				tags = {"@page_001"},
 				plugin = {"pretty", "html:target/cucumber-report-html", "json:target/cucumber.json"})
 public class RunCucumberTest {
 
