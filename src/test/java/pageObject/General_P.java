@@ -1,6 +1,7 @@
 package pageObject;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import framework.AppiumKeyword;
 import io.cucumber.datatable.DataTable;
@@ -64,4 +65,12 @@ public class General_P {
 		}
 	}
 
+	
+	public static void waitToSpinner() throws Exception {
+		try {
+			AppiumKeyword.waitToVanish(spinner, 20);
+		} catch (Exception e) {
+			System.out.println("Spinner is not present");
+		}
+	}
 }
