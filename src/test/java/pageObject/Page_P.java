@@ -9,7 +9,7 @@ import io.cucumber.datatable.DataTable;
 public class Page_P extends General_P {
 
 	public static String[] newPost = { "xpath", "//app-new-post-button/ion-button" };
-	public static String[] websiteInput = { "xpath", "//*[text()='Website']/.././/input" };
+	public static String[] websiteInput = { "xpath", "//app-opportunity//*[text()='Website']/.././/input" };
 
 	public static String[] delete(String value) {
 		String[] object = { "xpath", "//*[text()='$$']/../..//*[@aria-label='trash']" };
@@ -59,7 +59,6 @@ public class Page_P extends General_P {
 
 		AppiumKeyword.pushOn(button("*", "Next"));
 
-		System.out.println("%%%%%%%%%%%%%% = " + data.size());
 		for (int i = 2; i < data.size(); i++) {
 			String key = data.get(i).get(0);
 			String value = data.get(i).get(1);
@@ -78,6 +77,8 @@ public class Page_P extends General_P {
 		AppiumKeyword.pushOn(button("app-name-organization","Next"));
 
 		AppiumKeyword.pushOn(text("Skip"));
+		
+		waitToSpinner();
 
 	}
 
@@ -185,6 +186,7 @@ public class Page_P extends General_P {
 		AppiumKeyword.pushOn(delete(opportunity));
 		AppiumKeyword.pushOn(text("Accept"));
 		AppiumKeyword.waitToVanish(text("Accept"), 5);
-		AppiumKeyword.verify(containsText("Post your job opportunities to recruit the best talent"), 5);
+		waitToSpinner();
+		AppiumKeyword.verify(containsText("Post your job opportunities to recruit the best talent", "app-organization-profile"), 5);
 	}
 }

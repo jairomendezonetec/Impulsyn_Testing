@@ -50,6 +50,12 @@ public class General_P {
 		object[1] = object[1].replace("$$", value);
 		return object;
 	};
+	
+	public static String[] containsText(String value, String page) {
+		String[] object = { "xpath", "//%%//*[contains(text(),'$$')]" };
+		object[1] = object[1].replace("$$", value).replace("%%", page);
+		return object;
+	};
 
 	public static void validarErroresCampos(DataTable table) throws Exception {
 		List<List<String>> data = table.asLists();

@@ -13,8 +13,6 @@ Feature: Casos de prueba de Páginas
       | Name              | Test Automation Page      |
       | Tagline           | Tag Automation Page       |
       | Website           | www.TagAutomationPage.com |
-    When El usuario accede a "Menu" desde Home
-    When El usuario accede a "Page: Test Automation Page" desde Menu
     When El usuario crea un nuevo post
       | Texto | Este post es generado por pruebas automáticas en la página |
     When El usuario accede a "Post: Este post es generado por pruebas automáticas en la página" desde Profile
@@ -34,8 +32,6 @@ Feature: Casos de prueba de Páginas
       | Name              | Test Automation Opportunity Page |
       | Tagline           | Tag Automation Opportunity Page  |
       | Website           | www.TagAutomationPage.com        |
-    When El usuario accede a "Menu" desde Home
-    When El usuario accede a "Page: Test Automation Opportunity Page" desde Menu
     When El accede a "Opportunities" desde Page
     When El usuario crea una opportunidad:
       | Title                                         | QA Title                      |
