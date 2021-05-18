@@ -17,7 +17,7 @@ public class SlidesStart_P {
 
 	public static void accessTo(String buttonText) throws Exception {
 		System.out.println(DriverManager.getAndroidDriver().getContextHandles());
-		 AppiumKeyword.changeContext("WEBVIEW_io.ionic.starter");
+		 AppiumKeyword.changeContext("WEBVIEW_com.impulsyn.onetec");
 		 AppiumKeyword.waitToBeClickable(button(buttonText), 20);
 		 AppiumKeyword.pushOn(button(buttonText));
 	}
