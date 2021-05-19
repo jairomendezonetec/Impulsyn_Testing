@@ -85,8 +85,8 @@ public class Page_P extends General_P {
 	public static void eliminarPagina(String page) throws Exception {
 		AppiumKeyword.pushOn(ariaLabel("app-organization-profile", "settings outline"));
 		AppiumKeyword.pushOn(text(" Delete page "));
-		AppiumKeyword.pushOn(text("Accept"));
-		AppiumKeyword.waitToVanish(text("Accept"), 5);
+		AppiumKeyword.pushOn(containsText("Accept", "ion-alert"));
+		AppiumKeyword.waitToVanish(containsText("Accept", "ion-alert"), 5);
 		AppiumKeyword.isNotPresent(ariaLabel("app-organization-profile", "settings outline"));
 	}
 	
@@ -184,8 +184,8 @@ public class Page_P extends General_P {
 	public static void deleteOpportunity(String opportunity) throws Exception {
 	
 		AppiumKeyword.pushOn(delete(opportunity));
-		AppiumKeyword.pushOn(text("Accept"));
-		AppiumKeyword.waitToVanish(text("Accept"), 5);
+		AppiumKeyword.pushOn(containsText("Accept", "ion-alert"));
+		AppiumKeyword.waitToVanish(containsText("Accept", "ion-alert"), 5);
 		waitToSpinner();
 		AppiumKeyword.verify(containsText("Post your job opportunities to recruit the best talent", "app-organization-profile"), 5);
 	}
