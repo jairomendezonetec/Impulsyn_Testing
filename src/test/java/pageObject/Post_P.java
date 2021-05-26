@@ -21,6 +21,7 @@ public class Post_P extends General_P {
 
 		waitToSpinner();
 		AppiumKeyword.waitSec(2);
+		waitToSpinner();
 		AppiumKeyword.pushOn(newPost);
 
 		List<List<String>> data = table.asLists();
