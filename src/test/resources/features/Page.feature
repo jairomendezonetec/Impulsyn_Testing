@@ -34,13 +34,13 @@ Feature: Casos de prueba de Páginas
       | Website           | www.TagAutomationPage.com        |
     When El accede a "Opportunities" desde Page
     When El usuario crea una opportunidad:
-      | Title                                         | QA Title                      |
-      | Description                                   | Description QA of opportunity |
-      | Area                                          | Sales                         |
-      | Opportunity type                              | Full-Time                     |
-      | Responsibilities                              | QA Responsabilities           |
-      | Requirements                                  | QA requirements               |
-      | Redirect the candidate to an external webpage | true                          |
-      | Website                                       | www.externalweb.com           |
+      | Title                                          | QA Title                      |
+      | Description                                    | Description QA of opportunity |
+      | Area                                           | Sales                         |
+      | Opportunity type                               | Full-Time                     |
+      | Responsibilities                               | QA Responsabilities           |
+      | Requirements                                   | QA requirements               |
+      | Redirect the candidate to an external webpage. | true                          |
+      | Website                                        | www.externalweb.com           |
     When El usuario elimina la oportunidad "QA Title"
     Then El usuario elimina la página "Test Automation Page"

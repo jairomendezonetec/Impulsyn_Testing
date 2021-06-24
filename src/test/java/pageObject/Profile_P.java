@@ -65,7 +65,7 @@ public class Profile_P extends General_P {
 	
 	public static void deletePost() throws Exception {
 		AppiumKeyword.pushOn(ariaLabel("app-publication-detail", "ellipsis vertical"));
-		AppiumKeyword.pushOn(text(" Delete "));
+		AppiumKeyword.pushOn(containsText("Delete"));
 		AppiumKeyword.verify(containsText("Delete publication?"), 3);
 		AppiumKeyword.pushOn(containsText("Accept", "ion-alert"));
 		AppiumKeyword.waitToVanish(containsText("Accept", "ion-alert"), 10);

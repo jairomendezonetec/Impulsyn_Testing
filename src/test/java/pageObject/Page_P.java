@@ -30,7 +30,7 @@ public class Page_P extends General_P {
 	};
 	
 	public static String[] option(String value) {
-		String[] object = { "xpath", "//button//*[text()=' $$']/.." };
+		String[] object = { "xpath", "//button//*[contains(text(),' $$')]/.." };
 		object[1] = object[1].replace("$$", value);
 		return object;
 	};
@@ -84,7 +84,7 @@ public class Page_P extends General_P {
 
 	public static void eliminarPagina(String page) throws Exception {
 		AppiumKeyword.pushOn(ariaLabel("app-organization-profile", "settings outline"));
-		AppiumKeyword.pushOn(text(" Delete page "));
+		AppiumKeyword.pushOn(containsText("Delete page"));
 		AppiumKeyword.pushOn(containsText("Accept", "ion-alert"));
 		AppiumKeyword.waitToVanish(containsText("Accept", "ion-alert"), 5);
 		AppiumKeyword.isNotPresent(ariaLabel("app-organization-profile", "settings outline"));
@@ -163,7 +163,7 @@ public class Page_P extends General_P {
 				AppiumKeyword.pushOn(select(key));
 				AppiumKeyword.pushOn(option(value));
 				break;
-			case "Redirect the candidate to an external webpage":
+			case "Redirect the candidate to an external webpage.":
 				AppiumKeyword.dragToFind(checkbox(key), "UP", 3);
 				if(value.equals("true"))
 					AppiumKeyword.pushOn(checkbox(key));

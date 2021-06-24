@@ -33,7 +33,7 @@ public class Login_Page extends General_P {
 			String key = datum.get(0);
 			String value = datum.get(1);
 
-			if (key.equals("Remember me") && value.equals("true"))
+			if (key.equals("Remember me") && value.equals("false"))
 				AppiumKeyword.pushOn(remember);
 			else
 				AppiumKeyword.writeInto(input(key), value);

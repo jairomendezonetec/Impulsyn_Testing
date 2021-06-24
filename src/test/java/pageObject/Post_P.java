@@ -7,7 +7,7 @@ import io.cucumber.datatable.DataTable;
 
 public class Post_P extends General_P {
 
-	public static String[] newPost = { "xpath", "//*[@class='ion-page can-go-back']//app-new-post-button/ion-button" };
+	public static String[] newPost = { "xpath", "//app-new-post-button/ion-button" };
 	public static String[] textArea = { "xpath", "//app-create-post//textarea" };
 	public static String[] post = { "xpath", "//app-create-post//*[contains(text(),'Post')]" };
 
