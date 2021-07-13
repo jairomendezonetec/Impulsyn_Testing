@@ -14,8 +14,8 @@ import courgette.api.junit.Courgette;
         runLevel = CourgetteRunLevel.SCENARIO,
         rerunFailedScenarios = true,
         showTestOutput = true,
-        reportTargetDir = "build/chrome",
-        environmentInfo = "browser=chrome; project_info=Courgette-JVM is awesome!",
+        reportTargetDir = "build/Android",
+        environmentInfo = "browser=Android; project_info=Impulsyn",
         cucumberOptions = @CucumberOptions(
                 features = "src/test/resources/features",
                 glue = "stepDefinition",
