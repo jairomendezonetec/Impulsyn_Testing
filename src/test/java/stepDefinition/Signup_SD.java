@@ -1,9 +1,8 @@
 package stepDefinition;
 
-import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.When;
 import pageObject.Signup_P;
-import pageObject.SlidesStart_P;
 
 public class Signup_SD {
 	@When("^El usuario valida Sign up con errores$")

@@ -1,22 +1,15 @@
 package stepDefinition;
 
-import java.net.URL;
+import java.util.Date;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import framework.Configuration;
-import framework.Configuration.Global;
 import framework.DriverManager;
-import framework.ManageBrowser;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import utils.Logger;
 
 public class Hooks extends DriverManager {
@@ -41,7 +34,8 @@ public class Hooks extends DriverManager {
 //		try {
 			logger.debug("Taking final screenshot...");
 			byte[] screenshot = ((TakesScreenshot) DriverManager.getAndroidDriver()).getScreenshotAs(OutputType.BYTES);
-			scenario.embed(screenshot, "image/png");
+//			scenario.embed(screenshot, "image/png");
+			scenario.attach(screenshot, "image/png", "./report/screenshots/" + scenario.getName().replaceAll("\\s+", "") + "--" + new Date());
 //		} catch (WebDriverException wde) {
 //			System.err.println(wde.getMessage());
 //		} catch (ClassCastException cce) {

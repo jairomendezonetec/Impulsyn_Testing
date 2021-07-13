@@ -1,6 +1,6 @@
 package stepDefinition;
 
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.When;
 import pageObject.Buscador_P;
 
 public class buscador_SD {

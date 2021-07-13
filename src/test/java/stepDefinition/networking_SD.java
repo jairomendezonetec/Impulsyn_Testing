@@ -1,6 +1,6 @@
 package stepDefinition;
 
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.When;
 import pageObject.Networking_P;
 
 public class networking_SD {

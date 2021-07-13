@@ -1,9 +1,7 @@
 package stepDefinition;
 
-import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
-import pageObject.Home_P;
-import pageObject.Menu_P;
+import io.cucumber.java.en.When;
 import pageObject.Page_P;
 
 public class Page_SD {

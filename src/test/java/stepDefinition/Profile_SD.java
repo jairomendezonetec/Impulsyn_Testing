@@ -1,15 +1,7 @@
 package stepDefinition;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import cucumber.api.java.en.When;
-import framework.AppiumKeyword;
-import io.cucumber.datatable.DataTable;
-import pageObject.Menu_P;
-import pageObject.Post_P;
+import io.cucumber.java.en.When;
 import pageObject.Profile_P;
-import pageObject.Settings_P;
 
 public class Profile_SD {
 	@When("^El usuario accede a \"(.*?)\" desde Profile$")
