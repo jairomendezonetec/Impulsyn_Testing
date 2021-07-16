@@ -64,7 +64,7 @@ public class General_P {
 			String field = data.get(i).get(0);
 			String value =data.get(i).get(1);
 			System.out.println(value);
-			if(value.contains("error"))
+			if(value != null && value.contains("error"))
 				AppiumKeyword.verify(errorField(field), 10);
 			else
 				AppiumKeyword.isNotPresent(errorField(field));
