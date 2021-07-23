@@ -21,9 +21,9 @@ Feature: Casos de prueba de MENU
     When El usuario accede a "Menu" desde Home
     When El usuario accede a "Settings" desde Menu
     Then El usuario tiene las siguientes acciones en Settings:
-      #| Language        |
+#      | Language        |
       | Change password |
       | Edit profile    |
       | Privacy         |
-      #| Notifications   |
+#      | Notifications   |
       | Log out         |

@@ -11,6 +11,6 @@ Feature: Casos de prueba de HOME
       | Opportunities |
       | Notifications |
       | Academics     |
-      #| Search        |
-      #| Message       |
+      | Search        |
+      | Message       |
       | Menu          |

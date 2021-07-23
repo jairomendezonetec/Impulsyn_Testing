@@ -9,7 +9,7 @@ Feature: Casos de prueba de Relación de usuarios
     Then El usuario accede a "Manage my network"
     Then El usuario verifica el contacto "Jenkins Onetec" ha sido borrado
 
-  @network_001 @network
+  @network_001 @network @complete
   Scenario: NETWORK_001 - Validación de creación de post (Texto)
     When El usuario busca "Jenkins Onetec"
     And El usuario conecta con el contacto

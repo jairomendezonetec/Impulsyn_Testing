@@ -51,7 +51,7 @@ public class Home_P extends General_P {
                     selector = buttonTabText(key);
                     break;
                 case "Search":
-                    selector = ariaLabel("search outline");
+                    selector = ariaLabel("search");
                     break;
                 case "Message":
                     selector = ariaLabel("mail outline");
