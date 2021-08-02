@@ -103,6 +103,7 @@ public class Networking_P extends General_P {
             switch (key) {
                 case "Manage my network":
                 case "Connection suggestion":
+                case "My opportunities":
                     selector = text(key);
                     break;
                 default:

@@ -4,9 +4,17 @@ import framework.AppiumKeyword;
 
 public class Buscador_P extends General_P {
 
-    public static String[] resultado(String value) {
-        String[] object = {"xpath", "//app-item-user-org-search//*[text()='$$']"};
-        object[1] = object[1].replace("$$", value);
+    public static String[] resultado(String search, String value) {
+        String[] object = {"xpath", "//app-search//%%//*[text()='$$']"};
+        object[1] = object[1].replace("$$", value).replace("%%", search);
+        return object;
+    }
+
+    ;
+
+    public static String[] button(String page, String value) {
+        String[] object = {"xpath", "//%%//*[text()='$$']"};
+        object[1] = object[1].replace("$$", value).replace("%%", page);
         return object;
     }
 
@@ -25,8 +33,13 @@ public class Buscador_P extends General_P {
         AppiumKeyword.writeInto(input, busqueda);
     }
 
-    public static void accederResultado(String busqueda) throws Exception {
-        AppiumKeyword.pushOn(resultado(busqueda));
+    public static void accederResultado(String busqueda, boolean opportunitie) throws Exception {
+        if (opportunitie) {
+            while (!AppiumKeyword.exists(resultado("app-opportunity-item", busqueda), 5)) {
+                buscar(busqueda);
+            }
+            AppiumKeyword.pushOn(resultado("app-opportunity-item", busqueda));
+        } else
+            AppiumKeyword.pushOn(resultado("app-item-user-org-search", busqueda));
     }
-
 }

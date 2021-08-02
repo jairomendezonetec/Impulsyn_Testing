@@ -17,7 +17,7 @@ Feature: Casos de prueba de Páginas
       | Texto | Este post es generado por pruebas automáticas en la página |
     When El usuario accede a "Post: Este post es generado por pruebas automáticas en la página" desde Profile
     Then El usuario elimina el post
-    Then El usuario elimina la página "Test Automation Page"
+    Then El usuario elimina la página
 
   @page_002 @page @complete
   Scenario: PAGE_002 - Validación de creación/borrado de oportunidad
@@ -33,7 +33,7 @@ Feature: Casos de prueba de Páginas
       | Tagline           | Tag Automation Opportunity Page  |
       | Website           | www.TagAutomationPage.com        |
     When El accede a "Opportunities" desde Page
-    When El usuario crea una opportunidad:
+    When El usuario crea una oportunidad:
       | Title                                          | QA Title                      |
       | Description                                    | Description QA of opportunity |
       | Area                                           | Sales                         |
@@ -43,4 +43,4 @@ Feature: Casos de prueba de Páginas
       | Redirect the candidate to an external webpage. | true                          |
       | Website                                        | www.externalweb.com           |
     When El usuario elimina la oportunidad "QA Title"
-    Then El usuario elimina la página "Test Automation Page"
+    Then El usuario elimina la página

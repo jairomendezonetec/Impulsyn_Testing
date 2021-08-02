@@ -18,6 +18,13 @@ public class Home_P extends General_P {
         AppiumKeyword.verify(buttonTabText("Home"), 10);
     }
 
+    public static void backAt(String appType) throws Exception {
+        while (!AppiumKeyword.exists(buttonTabText("Home"), 1)) {
+            AppiumKeyword.pushOn(Networking_P.volverButton(appType));
+            AppiumKeyword.verify(buttonTabText("Home"), 10);
+        }
+    }
+
     public static void accessTo(String option) throws Exception {
         List<String> optionList = new ArrayList<String>();
         optionList.add(option);
@@ -57,8 +64,8 @@ public class Home_P extends General_P {
                     selector = ariaLabel("mail outline");
                     break;
                 case "Menu":
-                	//ELIMINAR DESPUES DE ARREGLARLO CON EL SPINNER
-                	AppiumKeyword.waitSec(2);
+                    //ELIMINAR DESPUES DE ARREGLARLO CON EL SPINNER
+                    AppiumKeyword.waitSec(2);
                     selector = ariaLabel("menu outline");
                     break;
                 default:
@@ -68,9 +75,9 @@ public class Home_P extends General_P {
         }
 
         if (access) {
-        	AppiumKeyword.waitToBeClickable(selector, 10);
-        	AppiumKeyword.pushOn(selector);
-        	waitToSpinner();
+            AppiumKeyword.waitToBeClickable(selector, 10);
+            AppiumKeyword.pushOn(selector);
+            waitToSpinner();
         }
     }
 

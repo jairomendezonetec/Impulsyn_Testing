@@ -20,5 +20,11 @@ public class home_SD {
 		Thread.sleep(10000);
 		Home_P.isAt();
 	}
+
+	@When("^El usuario vuelve a la home \"(.*?)\"$")
+	public void backAt(String appType) throws Throwable {
+//		Thread.sleep(10000);
+		Home_P.backAt(appType);
+	}
 	
 }
