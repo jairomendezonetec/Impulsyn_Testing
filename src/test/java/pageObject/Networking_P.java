@@ -104,6 +104,7 @@ public class Networking_P extends General_P {
                 case "Manage my network":
                 case "Connection suggestion":
                 case "My opportunities":
+                case "My programs":
                     selector = text(key);
                     break;
                 default:

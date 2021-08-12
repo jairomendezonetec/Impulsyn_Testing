@@ -10,11 +10,7 @@ Feature: Casos de prueba de Oportunidades
 
   @opportunitie_001 @opportunitie @complete
   Scenario: OPPORTUNITIE_001 - Validación de solicitud de oportunidad
-#    Given El usuario hace Log In
-#      | Email    | jairo.mendez@grupoonetec.com |
-#      | Password | -Acceso01                    |
-#    When El usuario accede a "Menu" desde Home
-    And El usuario accede a "Create page" desde Menu
+    Given El usuario accede a "Create page" desde Menu
     When El usuario crea una nueva página con los siguientes datos:
       | Page type         | Sports Organization              |
       | Organization type | Club                             |

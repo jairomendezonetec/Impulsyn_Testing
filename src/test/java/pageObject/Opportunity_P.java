@@ -5,6 +5,7 @@ import java.util.List;
 import framework.AppiumKeyword;
 import io.cucumber.datatable.DataTable;
 
+import static pageObject.Buscador_P.button;
 import static pageObject.General_P.text;
 import static pageObject.General_P.textArea;
 import static pageObject.Page_P.*;

@@ -6,10 +6,13 @@ import java.util.List;
 import framework.AppiumKeyword;
 import io.cucumber.datatable.DataTable;
 
+import static pageObject.Buscador_P.button;
+import static pageObject.Opportunity_P.*;
+import static pageObject.Opportunity_P.checkbox;
+
 public class Page_P extends General_P {
 
-    public static String[] newPost = {"xpath", "//app-new-post-button/ion-button"};
-    public static String[] websiteInput = {"xpath", "//app-opportunity//*[text()='Website']/.././/input"};
+    public static String[] emailInput = {"xpath", "//app-academic-program//ion-input[@type='email']//input"};
 
     public static String[] delete(String value) {
         String[] object = {"xpath", "//*[text()='$$']/../..//*[@aria-label='trash']"};
@@ -43,14 +46,6 @@ public class Page_P extends General_P {
 
     ;
 
-    public static String[] button(String page, String value) {
-        String[] object = {"xpath", "//%%//*[text()='$$']"};
-        object[1] = object[1].replace("$$", value).replace("%%", page);
-        return object;
-    }
-
-    ;
-
     public static String[] resultado(String value) {
         String[] object = {"xpath", "//app-search//app-opportunity-item//*[text()='$$']"};
         object[1] = object[1].replace("$$", value);
@@ -58,6 +53,15 @@ public class Page_P extends General_P {
     }
 
     ;
+
+    public static String[] dateTime(String value) {
+        String[] object = {"xpath", "//*[text()='$$']/..//ion-datetime"};
+        object[1] = object[1].replace("$$", value);
+        return object;
+    }
+
+    ;
+
 
     public static void createPage(DataTable table) throws Exception {
         List<List<String>> data = table.asLists();
@@ -136,6 +140,7 @@ public class Page_P extends General_P {
                 case "About":
                 case "Opportunities":
                 case "Post":
+                case "Programs":
                     selector = divText(key);
                     break;
                 case "Edit":
@@ -153,4 +158,70 @@ public class Page_P extends General_P {
             AppiumKeyword.pushOn(selector);
         }
     }
+
+    public static void createProgram(DataTable table) throws Exception {
+
+        AppiumKeyword.pushOn(button("app-organization-profile", "Post"));
+
+        List<List<String>> data = table.asLists();
+        for (int i = 0; i < data.size(); i++) {
+            String key = data.get(i).get(0);
+            String value = data.get(i).get(1);
+
+            switch (key) {
+                case "Title":
+                    AppiumKeyword.dragToFind(General_P.input(key), "UP", 5);
+                    AppiumKeyword.writeInto(General_P.input(key), value);
+                    AppiumKeyword.closeKeyboard();
+                    break;
+                case "Description":
+                    AppiumKeyword.dragToFind(textArea(key), "UP", 5);
+                    AppiumKeyword.writeInto(textArea(key), value);
+                    AppiumKeyword.closeKeyboard();
+                    break;
+                case "Type of program":
+                case "Area of study":
+                case "Modality":
+                case "Language":
+                    AppiumKeyword.dragToFind(select(key), "UP", 5);
+                    AppiumKeyword.pushOn(select(key));
+                    AppiumKeyword.pushOn(option(value));
+                    break;
+                case "VIA EMAIL":
+                    AppiumKeyword.dragToFind(checkbox(key), "UP", 3);
+                    if (value.equals("true"))
+                        AppiumKeyword.pushOn(checkbox(key));
+                    break;
+                case "Email":
+                    AppiumKeyword.dragToFind(emailInput, "UP", 5);
+                    AppiumKeyword.writeInto(emailInput, value);
+                    AppiumKeyword.closeKeyboard();
+                    break;
+                case "Start date":
+                case "End date":
+                    AppiumKeyword.dragToFind(Page_P.dateTime(key), "UP", 5);
+                    AppiumKeyword.pushOn(Page_P.dateTime(key));
+                    AppiumKeyword.pushOn(General_P.text("Accept"));
+                    break;
+                default:
+                    break;
+            }
+        }
+        AppiumKeyword.pushOn(button("app-academic-program", "Post"));
+    }
+
+    public static void requestAcademic() throws Exception {
+        AppiumKeyword.pushOn(applyOpportunity("Request info"));
+        AppiumKeyword.waitSec(3);
+        AppiumKeyword.pushOn(applyOpportunity("Request information"));
+        AppiumKeyword.waitSec(10);
+        AppiumKeyword.pushOn(Networking_P.volverButton("app-academic-program-detail"));
+    }
+
+    public static void verificaFormación(String academic) throws Exception {
+        AppiumKeyword.pushOn(requestedOpportunity);
+        AppiumKeyword.waitToBePresent(text(academic), 10);
+        AppiumKeyword.pushOn(Networking_P.volverButton("app-my-academics"));
+    }
+
 }

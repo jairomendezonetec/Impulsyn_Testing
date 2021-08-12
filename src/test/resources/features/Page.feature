@@ -1,12 +1,16 @@
 Feature: Casos de prueba de Páginas
 
+  Background: Verificar página de oportunidad borrada
+    Given El usuario hace Log In
+      | Email       | jairo.mendez@grupoonetec.com |
+      | Password    | -Acceso01                    |
+      | Remember me | false                        |
+    When El usuario accede a "Menu" desde Home
+    Then El usuario verifica la página "Test Automation Page" ha sido borrada
+
   @page_001 @page @complete @regresion
   Scenario: PAGE_001 - Validación de creación/borrado de página
-    Given El usuario hace Log In
-      | Email    | jairo.mendez@grupoonetec.com |
-      | Password | -Acceso01                    |
-    When El usuario accede a "Menu" desde Home
-    And El usuario accede a "Create page" desde Menu
+    Given El usuario accede a "Create page" desde Menu
     When El usuario crea una nueva página con los siguientes datos:
       | Page type         | Sports Organization       |
       | Organization type | Club                      |
@@ -21,11 +25,7 @@ Feature: Casos de prueba de Páginas
 
   @page_002 @page @complete
   Scenario: PAGE_002 - Validación de creación/borrado de oportunidad
-    Given El usuario hace Log In
-      | Email    | jairo.mendez@grupoonetec.com |
-      | Password | -Acceso01                    |
-    When El usuario accede a "Menu" desde Home
-    And El usuario accede a "Create page" desde Menu
+    Given El usuario accede a "Create page" desde Menu
     When El usuario crea una nueva página con los siguientes datos:
       | Page type         | Sports Organization              |
       | Organization type | Club                             |
@@ -43,4 +43,39 @@ Feature: Casos de prueba de Páginas
       | Redirect the candidate to an external webpage. | true                          |
       | Website                                        | www.externalweb.com           |
     When El usuario elimina la oportunidad "QA Title"
+    Then El usuario elimina la página
+
+  @page_003 @page @complete
+  Scenario: PAGE_003 - Validación de creación/borrado de página y conectar con un programa
+#    Given El usuario hace Log In
+#      | Email    | jairo.mendez@grupoonetec.com |
+#      | Password | -Acceso01                    |
+#    When El usuario accede a "Menu" desde Home
+    And El usuario accede a "Create page" desde Menu
+    When El usuario crea una nueva página con los siguientes datos:
+      | Page type        | Academic Institution |
+      | Institution type | University           |
+      | Name             | Test Automation Page |
+      | Tagline          | Tag Automation Page  |
+    When El accede a "Programs" desde Page
+    When El usuario crea un programa:
+      | Title           | QA Title Program             |
+      | Description     | Description QA of program    |
+      | Type of program | Graduate Program             |
+      | Area of study   | Sports law                   |
+      | Modality        | Online                       |
+      | Language        | Spanish                      |
+      | Start date      |                              |
+      | End date        |                              |
+      | VIA EMAIL       | true                         |
+      | Email           | jairo.mendez@grupoonetec.com |
+    And El usuario vuelve a la home "app-organization-profile"
+    When El usuario accede a "Academics" desde Home
+    When El usuario busca "QA Title Program" en Academics
+    And El usuario solicita la formación
+    And El usuario vuelve a la home "app-search"
+    Then El usuario accede a "My programs"
+    Then El usuario verifica la formación "QA Title Program"
+    When El usuario accede a "Menu" desde Home
+    When El usuario accede a "Page: Test Automation Page" desde Menu
     Then El usuario elimina la página

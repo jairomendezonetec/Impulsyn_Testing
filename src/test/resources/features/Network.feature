@@ -10,7 +10,7 @@ Feature: Casos de prueba de Relación de usuarios
     Then El usuario verifica el contacto "Jenkins Onetec" ha sido borrado
 
   @network_001 @network @complete
-  Scenario: NETWORK_001 - Validación de creación de post (Texto)
+  Scenario: NETWORK_001 - Validación de agregar/eliminar un contacto a la red
     When El usuario busca "Jenkins Onetec"
     And El usuario conecta con el contacto
     When El usuario hace Log out
