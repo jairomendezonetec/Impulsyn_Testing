@@ -99,6 +99,7 @@ public class Page_P extends General_P {
     }
 
     public static void eliminarPagina() throws Exception {
+    	waitToSpinner();
         AppiumKeyword.pushOn(ariaLabel("app-organization-profile", "settings outline"));
         AppiumKeyword.pushOn(containsText("Delete page"));
         AppiumKeyword.pushOn(containsText("Accept", "ion-alert"));
