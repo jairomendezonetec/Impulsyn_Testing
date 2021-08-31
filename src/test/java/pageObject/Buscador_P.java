@@ -38,15 +38,19 @@ public class Buscador_P extends General_P {
     }
 
     public static void accederResultadoOpportunities(String busqueda) throws Exception {
-        while (!AppiumKeyword.exists(resultado("app-opportunity-item", busqueda), 5)) {
+    	int i = 0;
+        while (!AppiumKeyword.exists(resultado("app-opportunity-item", busqueda), 5) && i<3) {
             buscar(busqueda);
+            i++;
         }
         AppiumKeyword.pushOn(resultado("app-opportunity-item", busqueda));
     }
 
     public static void accederResultadoAcademics(String busqueda) throws Exception {
-        while (!AppiumKeyword.exists(resultado("app-academic-item", busqueda), 5)) {
+    	int i = 0;
+        while (!AppiumKeyword.exists(resultado("app-academic-item", busqueda), 5) && i<3) {
             buscar(busqueda);
+            i++;
         }
         AppiumKeyword.pushOn(resultado("app-academic-item", busqueda));
     }
