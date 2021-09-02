@@ -23,8 +23,8 @@ import courgette.api.junit.Courgette;
                 publish = true,
                 plugin = {
                         "pretty",
-                        "json:build/firefox/cucumber-report/cucumber.json",
-                        "html:build/firefox/cucumber-report/cucumber.html"}
+                        "json:build/Android/cucumber-report/cucumber.json",
+                        "html:build/Android/cucumber-report/cucumber.html"}
         ))
 public class RunCourgetteTest {
 }
