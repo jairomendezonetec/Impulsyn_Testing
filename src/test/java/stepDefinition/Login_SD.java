@@ -49,6 +49,7 @@ public class Login_SD {
 	@When("^El usuario pulsa sobre login sin rellenar los campos$")
 	public void loginSinRellenar() throws Throwable {
 		Keywords.pushOn(Login_Page.button("Log in"));
+		Keywords.waitSec(5);
 	}
 	
 	
