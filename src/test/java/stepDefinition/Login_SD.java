@@ -9,6 +9,8 @@ import pageObject.Menu_P;
 import pageObject.Settings_P;
 import pageObject.SlidesStart_P;
 
+import java.security.Key;
+
 
 public class Login_SD {
 	@When("^El usuario valida Log in con errores$")
@@ -47,6 +49,7 @@ public class Login_SD {
 	@When("^El usuario pulsa sobre login sin rellenar los campos$")
 	public void loginSinRellenar() throws Throwable {
 		Keywords.pushOn(Login_Page.button("Log in"));
+		Keywords.waitSec(5);
 	}
 	
 	

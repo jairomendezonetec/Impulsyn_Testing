@@ -45,7 +45,7 @@ Feature: Casos de prueba de Páginas
     When El usuario elimina la oportunidad "QA Title"
     Then El usuario elimina la página
 
-  @page_003 @page @complete
+  @page_003 @page
   Scenario: PAGE_003 - Validación de creación/borrado de página y conectar con un programa
 #    Given El usuario hace Log In
 #      | Email    | jairo.mendez@grupoonetec.com |

@@ -8,7 +8,7 @@ Feature: Casos de prueba de Oportunidades
     When El usuario accede a "Menu" desde Home
     Then El usuario verifica la página "Test Automation Opportunity Page" ha sido borrada
 
-  @opportunitie_001 @opportunitie @complete
+  @opportunitie_001 @opportunitie
   Scenario: OPPORTUNITIE_001 - Validación de solicitud de oportunidad
     Given El usuario accede a "Create page" desde Menu
     When El usuario crea una nueva página con los siguientes datos:
