@@ -29,7 +29,7 @@ public class Hooks extends DriverManager {
 		
 	}
 	
-	@After
+//	@After
 	public void embedScreenshot(Scenario scenario)  throws Exception {
 //		try {
 			logger.debug("Taking final screenshot...");
