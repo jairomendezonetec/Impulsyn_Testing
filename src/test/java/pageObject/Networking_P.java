@@ -79,12 +79,9 @@ public class Networking_P extends General_P {
     }
 
     public static void verificarContactoBorrado(String contacto) throws Exception {
-        if (AppiumKeyword.exists(contact(contacto), 2)) {
+        if (AppiumKeyword.exists(contact(contacto), 2))
             eliminarContacto(contacto);
-            AppiumKeyword.pushOn(volverButton("app-my-network"));
-        } else {
-            AppiumKeyword.pushOn(volverButton("app-my-network"));
-        }
+        AppiumKeyword.pushOn(volverButton("app-my-network"));
     }
 
     public static void eliminarContacto(String contacto) throws Exception {
