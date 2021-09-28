@@ -84,6 +84,7 @@ public class Page_P extends General_P {
                 case "Tagline":
                 case "Website":
                     AppiumKeyword.writeInto(input(key), value);
+                    AppiumKeyword.waitSec(5);
                     AppiumKeyword.closeKeyboard();
                     break;
                 default:
