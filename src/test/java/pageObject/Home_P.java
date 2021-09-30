@@ -17,9 +17,9 @@ public class Home_P extends General_P {
     }
 
     public static void isAt() throws Exception {
-    	if(DriverManager.getGlobals().DRIVER.contains("ios")) {
+    	 if (DriverManager.getGlobals().DRIVER.contains("ios")) {
 			AppiumKeyword.changeContext("NATIVE_APP");
-			if(Keywords.exists(name("Allow"), 3))
+		if (AppiumKeyword.exists(name("Allow"), 3 ))
 				AppiumKeyword.pushOn(name("Allow"));
 			AppiumKeyword.changeContext("WEBVIEW");
     	}

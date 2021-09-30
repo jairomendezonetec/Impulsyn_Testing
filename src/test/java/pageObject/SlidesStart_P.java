@@ -19,6 +19,12 @@ public class SlidesStart_P extends General_P {
 
 	public static void accessTo(String buttonText) throws Exception {
 		 AppiumKeyword.changeContext("WEBVIEW");
+		 if (DriverManager.getGlobals().DRIVER.contains("ios")) {
+				AppiumKeyword.changeContext("NATIVE_APP");
+			if (AppiumKeyword.exists(name("Allow"), 3 ))
+					AppiumKeyword.pushOn(name("Allow"));
+				AppiumKeyword.changeContext("WEBVIEW");
+	    	}
 		 AppiumKeyword.waitToBeClickable(button(buttonText), 20);
 		 AppiumKeyword.pushOn(button(buttonText));
 		 if(buttonText.contains("Sign up")) {

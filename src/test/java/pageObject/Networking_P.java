@@ -136,14 +136,17 @@ public class Networking_P extends General_P {
 
     public static void enviarMensajeContacto(String contacto) throws Exception {
         AppiumKeyword.pushOn(buttonMessage(contacto));
-        AppiumKeyword.writeInto(message, "Prueba");
+        String chatMessage = System.currentTimeMillis() + " Prueba automatizada Network_002";
+        AppiumKeyword.writeInto(message, chatMessage);
+        AppiumKeyword.setData("chatMessage", chatMessage);
         AppiumKeyword.closeKeyboard();
         AppiumKeyword.pushOn(sendMessage);
         AppiumKeyword.pushOn(volverButton("app-chat-detail"));
     }
 
-    public static void verificaMensaje(String message) throws Exception {
+    public static void verificaMensaje() throws Exception {
         AppiumKeyword.pushOn(notificationMessage);
+        String message = AppiumKeyword.getData("chatMessage");
         AppiumKeyword.waitToBePresent(General_P.text(message), 2);
         AppiumKeyword.pushOn(volverButton("app-chats"));
 

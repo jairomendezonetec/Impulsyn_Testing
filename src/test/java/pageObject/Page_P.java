@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import framework.AppiumKeyword;
+import framework.DriverManager;
 import io.cucumber.datatable.DataTable;
 
 import static pageObject.Buscador_P.button;
@@ -84,13 +85,15 @@ public class Page_P extends General_P {
                 case "Tagline":
                 case "Website":
                     AppiumKeyword.writeInto(input(key), value);
-                    AppiumKeyword.waitSec(5);
-                    AppiumKeyword.closeKeyboard();
+                    AppiumKeyword.waitSec(3);
+                    AppiumKeyword.pushOn(text("identity"));
+                    //AppiumKeyword.closeKeyboard();
                     break;
                 default:
                     break;
             }
         }
+        //AppiumKeyword.dragToFind(button("app-name-organization", "Next"), "UP", 5);
         AppiumKeyword.pushOn(button("app-name-organization", "Next"));
 
         AppiumKeyword.pushOn(text("Skip"));
@@ -209,6 +212,7 @@ public class Page_P extends General_P {
                     break;
             }
         }
+        AppiumKeyword.dragToFind(button("app-academic-program", "Post"), "UP", 5);
         AppiumKeyword.pushOn(button("app-academic-program", "Post"));
     }
 

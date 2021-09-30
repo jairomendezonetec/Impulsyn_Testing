@@ -86,6 +86,7 @@ public class Opportunity_P {
                     break;
             }
         }
+        AppiumKeyword.dragToFind(button("app-opportunity", "Post"), "UP", 5);
         AppiumKeyword.pushOn(button("app-opportunity", "Post"));
     }
 
