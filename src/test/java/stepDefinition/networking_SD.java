@@ -45,8 +45,8 @@ public class networking_SD {
         Networking_P.enviarMensajeContacto(contact);
     }
 
-    @When("^El usuario verifica que ha recibido el mensaje \"(.*?)\" correctamente$")
-    public void verificaMensaje(String message) throws Throwable {
-        Networking_P.verificaMensaje(message);
+    @When("^El usuario verifica que ha recibido el mensaje correctamente$")
+    public void verificaMensaje() throws Throwable {
+        Networking_P.verificaMensaje();
     }
 }

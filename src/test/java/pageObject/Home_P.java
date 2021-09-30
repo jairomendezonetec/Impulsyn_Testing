@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import framework.AppiumKeyword;
+import framework.DriverManager;
+import framework.Keywords;
 import io.cucumber.datatable.DataTable;
 
 public class Home_P extends General_P {
@@ -15,6 +17,12 @@ public class Home_P extends General_P {
     }
 
     public static void isAt() throws Exception {
+    	 if (DriverManager.getGlobals().DRIVER.contains("ios")) {
+			AppiumKeyword.changeContext("NATIVE_APP");
+		if (AppiumKeyword.exists(name("Allow"), 3 ))
+				AppiumKeyword.pushOn(name("Allow"));
+			AppiumKeyword.changeContext("WEBVIEW");
+    	}
         AppiumKeyword.verify(buttonTabText("Home"), 10);
     }
 
@@ -26,6 +34,7 @@ public class Home_P extends General_P {
     }
 
     public static void accessTo(String option) throws Exception {
+    	Home_P.isAt();
         List<String> optionList = new ArrayList<String>();
         optionList.add(option);
 

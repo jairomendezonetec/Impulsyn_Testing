@@ -19,12 +19,12 @@ import courgette.api.junit.Courgette;
         cucumberOptions = @CucumberOptions(
                 features = "src/test/resources/features",
                 glue = "stepDefinition",
-                tags = {"@login_003"},
+                tags = {"@complete"},
                 publish = true,
                 plugin = {
                         "pretty",
-                        "json:build/Android/cucumber-report/cucumber.json",
-                        "html:build/Android/cucumber-report/cucumber.html"}
+                        "json:build/iOS/cucumber-report/cucumber.json",
+                        "html:build/iOS/cucumber-report/cucumber.html"}
         ))
-public class RunCourgetteTest {
+public class RunCourgetteTest_iOS {
 }
