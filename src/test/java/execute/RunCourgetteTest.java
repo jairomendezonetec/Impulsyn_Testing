@@ -20,7 +20,7 @@ import courgette.api.junit.Courgette;
         cucumberOptions = @CucumberOptions(
                 features = "src/test/resources/features",
                 glue = "stepDefinition",
-                tags = {"@network_001"},
+                tags = {"@network_002"},
                 publish = true,
                 plugin = {
                         "pretty",

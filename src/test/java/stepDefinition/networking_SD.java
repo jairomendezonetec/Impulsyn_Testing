@@ -39,4 +39,14 @@ public class networking_SD {
     public void eliminaContacto(String contact) throws Throwable {
         Networking_P.eliminarContacto(contact);
     }
+
+    @When("^El usuario envía un mensaje al contacto \"(.*?)\"$")
+    public void enviarMensajeContacto(String contact) throws Throwable {
+        Networking_P.enviarMensajeContacto(contact);
+    }
+
+    @When("^El usuario verifica que ha recibido el mensaje correctamente$")
+    public void verificaMensaje() throws Throwable {
+        Networking_P.verificaMensaje();
+    }
 }

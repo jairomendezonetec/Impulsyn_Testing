@@ -9,9 +9,20 @@ public class Networking_P extends General_P {
 
     public static String[] connect = {"xpath", "//*[@class='profile-content']//ion-button[contains(text(),'Connect')]"};
     public static String[] aceptarSolicitud = {"xpath", "//ion-button[contains(@class,'accept')]"};
+    public static String[] message = {"xpath", "//textarea[@name='message']"};
+    public static String[] sendMessage = {"xpath", "//*[@name='send-outline']"};
+    public static String[] notificationMessage = {"xpath", "//ion-button//*[@aria-label='mail outline']/.."};
 
     public static String[] contact(String value) {
         String[] object = {"xpath", "//*[text()='Contacts']/../../..//*[text()='$$']"};
+        object[1] = object[1].replace("$$", value);
+        return object;
+    }
+
+    ;
+
+    public static String[] buttonMessage(String value) {
+        String[] object = {"xpath", "//*[text()='Contacts']/../../..//*[text()='$$']/../..//ion-button"};
         object[1] = object[1].replace("$$", value);
         return object;
     }
@@ -115,5 +126,23 @@ public class Networking_P extends General_P {
             AppiumKeyword.pushOn(selector);
             waitToSpinner();
         }
+    }
+
+    public static void enviarMensajeContacto(String contacto) throws Exception {
+        AppiumKeyword.pushOn(buttonMessage(contacto));
+        String chatMessage = System.currentTimeMillis() + " Prueba automatizada Network_002";
+        AppiumKeyword.setData("chatMessage", chatMessage);
+        AppiumKeyword.writeInto(message, chatMessage);
+        AppiumKeyword.closeKeyboard();
+        AppiumKeyword.pushOn(sendMessage);
+        AppiumKeyword.pushOn(volverButton("app-chat-detail"));
+    }
+
+    public static void verificaMensaje() throws Exception {
+        AppiumKeyword.pushOn(notificationMessage);
+        String message = AppiumKeyword.getData("chatMessage");
+        AppiumKeyword.waitToBePresent(General_P.text(message), 2);
+        AppiumKeyword.pushOn(volverButton("app-chats"));
+
     }
 }
