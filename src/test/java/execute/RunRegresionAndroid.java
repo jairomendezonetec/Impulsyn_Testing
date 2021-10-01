@@ -26,5 +26,5 @@ import courgette.api.junit.Courgette;
                         "json:build/firefox/cucumber-report/cucumber.json",
                         "html:build/firefox/cucumber-report/cucumber.html"}
         ))
-public class RunRegresion {
+public class RunRegresionAndroid {
 }
