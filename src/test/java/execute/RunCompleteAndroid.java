@@ -26,5 +26,5 @@ import courgette.api.junit.Courgette;
                         "json:build/Android/cucumber-report/cucumber.json",
                         "html:build/Android/cucumber-report/cucumber.html"}
         ))
-public class RunComplete {
+public class RunCompleteAndroid {
 }
