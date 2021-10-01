@@ -18,9 +18,9 @@
 
 		<dependencies>
 			<dependency>
-				<groupId>Onetec_Framework</groupId>
-				<artifactId>Onetec_Framework</artifactId>
-				<version>1.0.1</version>
+				<groupId>io.github.jairo91</groupId>
+				<artifactId>testingapp</artifactId>
+				<version>1.0.2</version>
 			</dependency>
 
 			<dependency>
