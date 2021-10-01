@@ -14,9 +14,13 @@ public class General_P {
         String[] object = {"xpath", "//*[text()='$$']/../..//input"};
         object[1] = object[1].replace("$$", value);
         return object;
-    }
-
-    ;
+    };
+    
+    public static String[] name(String value) {
+        String[] object = {"xpath", "//*[@name='$$'][1]"};
+        object[1] = object[1].replace("$$", value);
+        return object;
+    };
 
     public static String[] textArea(String value) {
         String[] object = {"xpath", "//*[text()='$$']/../..//textarea"};

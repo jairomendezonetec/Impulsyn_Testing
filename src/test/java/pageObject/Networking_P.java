@@ -3,7 +3,14 @@ package pageObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.interactions.touch.TouchActions;
+
 import framework.AppiumKeyword;
+import framework.DriverManager;
+import framework.Keywords;
+import io.appium.java_client.MultiTouchAction;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.ios.IOSDriver;
 
 public class Networking_P extends General_P {
 
@@ -38,7 +45,7 @@ public class Networking_P extends General_P {
     ;
 
     public static String[] buttonDeleteContact(String value) {
-        String[] object = {"xpath", "//ion-title[text()='$$']/..//ion-buttons[@slot='end']"};
+        String[] object = {"xpath", "//ion-title[text()='$$']/..//ion-buttons[@slot='end']/ion-button"};
         object[1] = object[1].replace("$$", value);
         return object;
     }
@@ -46,7 +53,7 @@ public class Networking_P extends General_P {
     ;
 
     public static String[] volverButton(String value) {
-        String[] object = {"xpath", "//$$//*[@name='chevron-back-outline']/.."};
+        String[] object = {"xpath", "//$$//*[@name='chevron-back-outline']"};
         object[1] = object[1].replace("$$", value);
         return object;
     }
@@ -79,9 +86,9 @@ public class Networking_P extends General_P {
     }
 
     public static void verificarContactoBorrado(String contacto) throws Exception {
-        if (AppiumKeyword.exists(contact(contacto), 2))
+        if (AppiumKeyword.exists(contact(contacto), 2)) 
             eliminarContacto(contacto);
-        AppiumKeyword.pushOn(volverButton("app-my-network"));
+       AppiumKeyword.pushOn(volverButton("app-my-network"));
     }
 
     public static void eliminarContacto(String contacto) throws Exception {
@@ -95,7 +102,6 @@ public class Networking_P extends General_P {
     public static void accederA(String option) throws Exception {
         List<String> optionList = new ArrayList<String>();
         optionList.add(option);
-
         List<List<String>> data = new ArrayList<List<String>>();
         data.add(optionList);
         verifyAndAccess(data, true);
@@ -131,8 +137,8 @@ public class Networking_P extends General_P {
     public static void enviarMensajeContacto(String contacto) throws Exception {
         AppiumKeyword.pushOn(buttonMessage(contacto));
         String chatMessage = System.currentTimeMillis() + " Prueba automatizada Network_002";
-        AppiumKeyword.setData("chatMessage", chatMessage);
         AppiumKeyword.writeInto(message, chatMessage);
+        AppiumKeyword.setData("chatMessage", chatMessage);
         AppiumKeyword.closeKeyboard();
         AppiumKeyword.pushOn(sendMessage);
         AppiumKeyword.pushOn(volverButton("app-chat-detail"));

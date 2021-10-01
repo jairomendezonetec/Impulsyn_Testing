@@ -57,7 +57,7 @@ Feature: Casos de prueba de Relación de usuarios
     When El usuario hace Log out
     Given El usuario valida Log in
       | Email    | jairo.mendez@grupoonetec.com |
-      | Password | -Acceso01                    |
+      | Password | -Acceso01               |
     When El usuario accede a "Networking" desde Home
     Then El usuario accede a "Manage my network"
     Then El usuario elimina el contacto "Jenkins Onetec"
