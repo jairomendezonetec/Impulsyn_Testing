@@ -14,6 +14,7 @@ import courgette.api.junit.Courgette;
         runLevel = CourgetteRunLevel.SCENARIO,
         rerunFailedScenarios = true,
         showTestOutput = true,
+        rerunAttempts = 2,
         reportTargetDir = "build/Android",
         environmentInfo = "browser=Android; project_info=Impulsyn",
         cucumberOptions = @CucumberOptions(
