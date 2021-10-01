@@ -24,7 +24,7 @@ public class Hooks extends DriverManager {
 		logger.info("----------------------------------------------------------------------");
 		logger.info(" Start Scenario: " + scenario.getName());
 		logger.info("----------------------------------------------------------------------");
-		framework.Configuration.loadConfiguration("testResources/iOS.properties");
+		framework.Configuration.loadConfiguration("testResources/framework.properties");
 		startDriver();
 		
 	}
