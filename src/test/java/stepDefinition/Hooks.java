@@ -24,7 +24,7 @@ public class Hooks extends DriverManager {
 		logger.info("----------------------------------------------------------------------");
 		logger.info(" Start Scenario: " + scenario.getName());
 		logger.info("----------------------------------------------------------------------");
-		framework.Configuration.loadConfiguration("testResources/Android.properties");
+		framework.Configuration.loadConfiguration("testResources/IOS.properties");
 		startDriver();
 		
 	}
