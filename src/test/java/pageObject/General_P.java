@@ -1,7 +1,6 @@
 package pageObject;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import framework.AppiumKeyword;
 import io.cucumber.datatable.DataTable;
