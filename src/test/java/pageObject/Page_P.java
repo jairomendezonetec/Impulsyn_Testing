@@ -86,14 +86,12 @@ public class Page_P extends General_P {
                 case "Website":
                     AppiumKeyword.writeInto(input(key), value);
                     AppiumKeyword.waitSec(3);
-                    AppiumKeyword.pushOn(text("identity"));
-                    //AppiumKeyword.closeKeyboard();
+                    General_P.closeKeyboard();
                     break;
                 default:
                     break;
             }
         }
-        //AppiumKeyword.dragToFind(button("app-name-organization", "Next"), "UP", 5);
         AppiumKeyword.pushOn(button("app-name-organization", "Next"));
 
         AppiumKeyword.pushOn(text("Skip"));
@@ -103,7 +101,7 @@ public class Page_P extends General_P {
     }
 
     public static void eliminarPagina() throws Exception {
-    	waitToSpinner();
+        waitToSpinner();
         AppiumKeyword.pushOn(ariaLabel("app-organization-profile", "settings outline"));
         AppiumKeyword.pushOn(containsText("Delete page"));
         AppiumKeyword.pushOn(containsText("Accept", "ion-alert"));

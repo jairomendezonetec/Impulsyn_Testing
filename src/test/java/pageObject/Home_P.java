@@ -17,12 +17,16 @@ public class Home_P extends General_P {
     }
 
     public static void isAt() throws Exception {
-    	 if (DriverManager.getGlobals().DRIVER.contains("ios")) {
-			AppiumKeyword.changeContext("NATIVE_APP");
-			if (AppiumKeyword.exists(name("Allow"), 10 ))
-				AppiumKeyword.pushOn(name("Allow"));
-			AppiumKeyword.changeContext("WEBVIEW");
-    	}
+        int i = 0;
+        if (DriverManager.getGlobals().DRIVER.contains("ios")) {
+            AppiumKeyword.changeContext("NATIVE_APP");
+            while (AppiumKeyword.exists(name("Allow"), 10) && i < 3) {
+                AppiumKeyword.waitToBePresent(name("Allow"), 5);
+                AppiumKeyword.pushOn(name("Allow"));
+                i++;
+            }
+            AppiumKeyword.changeContext("WEBVIEW");
+        }
         AppiumKeyword.verify(buttonTabText("Home"), 10);
     }
 
@@ -34,7 +38,7 @@ public class Home_P extends General_P {
     }
 
     public static void accessTo(String option) throws Exception {
-    	Home_P.isAt();
+        Home_P.isAt();
         List<String> optionList = new ArrayList<String>();
         optionList.add(option);
 

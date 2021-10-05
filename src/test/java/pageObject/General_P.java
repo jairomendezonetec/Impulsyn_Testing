@@ -3,11 +3,13 @@ package pageObject;
 import java.util.List;
 
 import framework.AppiumKeyword;
+import framework.DriverManager;
 import io.cucumber.datatable.DataTable;
 
 public class General_P {
 
     public static String[] spinner = {"xpath", "//app-spinner"};
+    public static String[] hideKeyword = {"xpath", "//*[@id='main-content']"};
 
     public static String[] input(String value) {
         String[] object = {"xpath", "//*[text()='$$']/../..//input"};
@@ -16,7 +18,7 @@ public class General_P {
     };
     
     public static String[] name(String value) {
-        String[] object = {"xpath", "//*[@name='$$'][1]"};
+        String[] object = {"xpath", "//*[@name='$$']"};
         object[1] = object[1].replace("$$", value);
         return object;
     };
@@ -98,5 +100,12 @@ public class General_P {
         } catch (Exception e) {
             System.out.println("Spinner is not present");
         }
+    }
+
+    public static void closeKeyboard() throws Exception {
+        if (DriverManager.getGlobals().DRIVER.contains("ios"))
+            AppiumKeyword.pushOn(hideKeyword);
+        else
+            AppiumKeyword.closeKeyboard();
     }
 }

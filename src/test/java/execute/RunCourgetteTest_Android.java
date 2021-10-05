@@ -19,7 +19,7 @@ import courgette.api.junit.Courgette;
         cucumberOptions = @CucumberOptions(
                 features = "src/test/resources/features",
                 glue = "stepDefinition",
-                tags = {"@login_003"},
+                tags = {"@page_001"},
                 publish = true,
                 plugin = {
                         "pretty",

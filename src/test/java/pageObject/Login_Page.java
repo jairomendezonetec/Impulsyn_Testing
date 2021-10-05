@@ -38,8 +38,7 @@ public class Login_Page extends General_P {
 			else
 				AppiumKeyword.writeInto(input(key), value);
 		}
-		//AppiumKeyword.pushOn(text("Hello"));
-		AppiumKeyword.closeKeyboard();
+		General_P.closeKeyboard();
 		AppiumKeyword.pushOn(button("Log in"));
 
 		if (!errors) {

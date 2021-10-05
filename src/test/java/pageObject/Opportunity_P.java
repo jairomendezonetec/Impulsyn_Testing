@@ -3,6 +3,7 @@ package pageObject;
 import java.util.List;
 
 import framework.AppiumKeyword;
+import framework.DriverManager;
 import io.cucumber.datatable.DataTable;
 
 import static pageObject.Buscador_P.button;
@@ -51,14 +52,14 @@ public class Opportunity_P {
                 case "Title":
                     AppiumKeyword.dragToFind(General_P.input(key), "UP", 5);
                     AppiumKeyword.writeInto(General_P.input(key), value);
-                    AppiumKeyword.closeKeyboard();
+                    General_P.closeKeyboard();
                     break;
                 case "Description":
                 case "Responsibilities":
                 case "Requirements":
                     AppiumKeyword.dragToFind(textArea(key), "UP", 5);
                     AppiumKeyword.writeInto(textArea(key), value);
-                    AppiumKeyword.closeKeyboard();
+                    General_P.closeKeyboard();
                     break;
                 case "Area":
                 case "Opportunity type":
@@ -75,18 +76,18 @@ public class Opportunity_P {
                 case "Email":
                     AppiumKeyword.dragToFind(emailInput, "UP", 5);
                     AppiumKeyword.writeInto(emailInput, value);
-                    AppiumKeyword.closeKeyboard();
+                    General_P.closeKeyboard();
                     break;
                 case "Website":
                     AppiumKeyword.dragToFind(Opportunity_P.input(key), "UP", 5);
                     AppiumKeyword.writeInto(Opportunity_P.input(key), value);
-                    AppiumKeyword.closeKeyboard();
+                    General_P.closeKeyboard();
                     break;
                 default:
                     break;
             }
         }
-        AppiumKeyword.dragToFind(button("app-opportunity", "Post"), "UP", 5);
+
         AppiumKeyword.pushOn(button("app-opportunity", "Post"));
     }
 

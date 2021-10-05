@@ -15,12 +15,12 @@ import courgette.api.junit.Courgette;
         rerunFailedScenarios = true,
         showTestOutput = true,
         rerunAttempts = 2,
-        reportTargetDir = "build/Android",
-        environmentInfo = "browser=Android; project_info=Impulsyn",
+        reportTargetDir = "build/ios",
+        environmentInfo = "browser=ios; project_info=Impulsyn",
         cucumberOptions = @CucumberOptions(
                 features = "src/test/resources/features",
                 glue = "stepDefinition",
-                tags = {"@network_002"},
+                tags = {"@login_004"},
                 publish = true,
                 plugin = {
                         "pretty",
