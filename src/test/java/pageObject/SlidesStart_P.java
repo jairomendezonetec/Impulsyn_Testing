@@ -24,7 +24,8 @@ public class SlidesStart_P extends General_P {
         AppiumKeyword.waitToBeClickable(button(buttonText), 20);
         AppiumKeyword.pushOn(button(buttonText));
         if (buttonText.contains("Sign up")) {
-            AppiumKeyword.pushOn(containsText("Accept", "app-cookies"));
+            if(AppiumKeyword.exists(containsText("Accept", "app-cookies"), 3))
+                AppiumKeyword.pushOn(containsText("Accept", "app-cookies"));
             AppiumKeyword.dragToFind(containsText("Accept", "app-data-protection"), "UP", 5);
             AppiumKeyword.pushOn(containsText("Accept", "app-data-protection"));
         }
