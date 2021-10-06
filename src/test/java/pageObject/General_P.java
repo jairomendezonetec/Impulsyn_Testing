@@ -108,7 +108,7 @@ public class General_P {
     public static void closeKeyboard() throws Exception {
         if (DriverManager.getGlobals().DRIVER.contains("ios")) {
             System.out.println("Closing iOS keyword...");
-            TouchAction touchAction=new TouchAction(DriverManager.getAndroidDriver());
+            TouchAction touchAction=new TouchAction(DriverManager.getAppiumDriver());
             touchAction.tap(point(195, 55)).perform();
         }
         else

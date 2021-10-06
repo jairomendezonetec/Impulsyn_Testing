@@ -33,7 +33,7 @@ public class Hooks extends DriverManager {
 	public void embedScreenshot(Scenario scenario)  throws Exception {
 //		try {
 			logger.debug("Taking final screenshot...");
-			byte[] screenshot = ((TakesScreenshot) DriverManager.getAndroidDriver()).getScreenshotAs(OutputType.BYTES);
+			byte[] screenshot = ((TakesScreenshot) DriverManager.getAppiumDriver()).getScreenshotAs(OutputType.BYTES);
 //			scenario.embed(screenshot, "image/png");
 			scenario.attach(screenshot, "image/png", "./report/screenshots/" + scenario.getName().replaceAll("\\s+", "") + "--" + new Date());
 //		} catch (WebDriverException wde) {

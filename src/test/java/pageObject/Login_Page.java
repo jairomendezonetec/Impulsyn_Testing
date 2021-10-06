@@ -66,7 +66,7 @@ public class Login_Page extends General_P {
 	public static void cerrarYAbrir() throws Exception {
 		AppiumKeyword.closeApp();
 		AppiumKeyword.launchApp();
-		System.out.println(DriverManager.getAndroidDriver().getContextHandles());
+		System.out.println(DriverManager.getAppiumDriver().getContextHandles());
 		AppiumKeyword.changeContext("WEBVIEW_io.ionic.starter");
 	}
 
