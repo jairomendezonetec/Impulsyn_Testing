@@ -13,7 +13,6 @@ import static io.appium.java_client.touch.offset.PointOption.point;
 public class General_P {
 
     public static String[] spinner = {"xpath", "//app-spinner"};
-    public static String[] hideKeyword = {"xpath", "//XCUIElementTypeOther//XCUIElementTypeOther//XCUIElementTypeOther/XCUIElementTypeOther"};
 
     public static String[] input(String value) {
         String[] object = {"xpath", "//*[text()='$$']/../..//input"};
@@ -110,7 +109,7 @@ public class General_P {
         if (DriverManager.getGlobals().DRIVER.contains("ios")) {
             System.out.println("Closing iOS keyword...");
             TouchAction touchAction=new TouchAction(DriverManager.getAndroidDriver());
-            touchAction.tap(point(10, 10)).perform();
+            touchAction.tap(point(195, 55)).perform();
         }
         else
             AppiumKeyword.closeKeyboard();
