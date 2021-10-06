@@ -21,6 +21,7 @@
             <groupId>GrupoOnetec</groupId>
             <artifactId>testingapp</artifactId>
             <version>1.0.6</version>
+            <systemPath>${project.basedir}/lib/testingapp-1.0.6.jar</systemPath>
         </dependency>
 
         <dependency>
