@@ -4,12 +4,16 @@ import java.util.List;
 
 import framework.AppiumKeyword;
 import framework.DriverManager;
+import framework.Keywords;
+import io.appium.java_client.TouchAction;
 import io.cucumber.datatable.DataTable;
+
+import static io.appium.java_client.touch.offset.PointOption.point;
 
 public class General_P {
 
     public static String[] spinner = {"xpath", "//app-spinner"};
-    public static String[] hideKeyword = {"xpath", "//*[@id='main-content']"};
+    public static String[] hideKeyword = {"xpath", "//XCUIElementTypeOther//XCUIElementTypeOther//XCUIElementTypeOther/XCUIElementTypeOther"};
 
     public static String[] input(String value) {
         String[] object = {"xpath", "//*[text()='$$']/../..//input"};
@@ -103,8 +107,11 @@ public class General_P {
     }
 
     public static void closeKeyboard() throws Exception {
-        if (DriverManager.getGlobals().DRIVER.contains("ios"))
-            AppiumKeyword.pushOn(hideKeyword);
+        if (DriverManager.getGlobals().DRIVER.contains("ios")) {
+            System.out.println("Closing iOS keyword...");
+            TouchAction touchAction=new TouchAction(DriverManager.getAndroidDriver());
+            touchAction.tap(point(10, 10)).perform();
+        }
         else
             AppiumKeyword.closeKeyboard();
     }
