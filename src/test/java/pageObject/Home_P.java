@@ -28,7 +28,7 @@ public class Home_P extends General_P {
             }
             AppiumKeyword.changeContext("WEBVIEW");
         }
-        AppiumKeyword.verify(buttonTabText("Home"), 10);
+        AppiumKeyword.verify(buttonTabText("Home"), 30);
     }
 
     public static void backAt(String appType) throws Exception {
