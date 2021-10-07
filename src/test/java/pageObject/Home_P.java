@@ -18,10 +18,11 @@ public class Home_P extends General_P {
 
     public static void isAt() throws Exception {
         int i = 0;
+        AppiumKeyword.verify(buttonTabText("Home"), 10);
         if (DriverManager.getGlobals().DRIVER.contains("ios")) {
             AppiumKeyword.changeContext("NATIVE_APP");
-            while (AppiumKeyword.exists(name("Allow"), 10) && i < 3) {
-                AppiumKeyword.waitToBePresent(name("Allow"), 5);
+            while (AppiumKeyword.exists(name("Allow"), 1) && i < 3) {
+                AppiumKeyword.waitToBePresent(name("Allow"), 10);
                 AppiumKeyword.pushOn(name("Allow"));
                 i++;
             }

@@ -43,7 +43,7 @@ public class Login_Page extends General_P {
         AppiumKeyword.pushOn(button("Log in"));
 
         if (!errors) {
-            AppiumKeyword.waitToVanish(button("Log in"), 10);
+            AppiumKeyword.waitToVanish(button("Log in"), 30);
             waitToSpinner();
             if (AppiumKeyword.exists(text(" Accept"), 1))
                 AppiumKeyword.pushOn(text(" Accept"));
