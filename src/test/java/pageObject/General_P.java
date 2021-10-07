@@ -99,7 +99,7 @@ public class General_P {
 
     public static void waitToSpinner() throws Exception {
         try {
-            AppiumKeyword.waitToVanish(spinner, 20);
+            AppiumKeyword.waitToVanish(spinner, 30);
         } catch (Exception e) {
             System.out.println("Spinner is not present");
         }
