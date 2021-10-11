@@ -18,7 +18,7 @@ public class Home_P extends General_P {
 
     public static void isAt() throws Exception {
         int i = 0;
-        AppiumKeyword.verify(buttonTabText("Home"), 10);
+        AppiumKeyword.verify(buttonTabText("Home"), 30);
         if (DriverManager.getGlobals().DRIVER.contains("ios")) {
             AppiumKeyword.changeContext("NATIVE_APP");
             while (AppiumKeyword.exists(name("Allow"), 1) && i < 3) {
@@ -28,7 +28,6 @@ public class Home_P extends General_P {
             }
             AppiumKeyword.changeContext("WEBVIEW");
         }
-        AppiumKeyword.verify(buttonTabText("Home"), 30);
     }
 
     public static void backAt(String appType) throws Exception {
